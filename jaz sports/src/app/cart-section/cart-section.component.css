@@ -1,0 +1,46 @@
+.cart-section h2 {
+  font-weight: 700;
+  color: #222;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 300px; /* better fit for product grid */
+  object-fit: contain;
+  background: #fff;
+  padding: 10px;
+}
+
+.price {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* button row */
+.card-body .d-flex {
+  gap: 8px; /* spacing between buttons */
+}
+
+/* WhatsApp button styling */
+.btn-whatsapp {
+  background-color: #25D366;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5b;
+  color: #fff;
+}

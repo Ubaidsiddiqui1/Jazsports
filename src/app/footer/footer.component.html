@@ -1,0 +1,65 @@
+<!-- Font Awesome CDN (add in index.html <head> only once) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer class="footer" role="contentinfo" aria-label="Site footer">
+  <div class="center-circle" aria-hidden="true"></div>
+
+  <div class="footer-inner container">
+    <div class="row gy-4 align-items-start">
+
+      <!-- Quick links (far left) -->
+      <div class="col-12 col-md-3 order-md-1">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/shop">Shop</a></li>
+          <li><a routerLink="/sports-goods">Sports Goods</a></li>
+          <li><a routerLink="/sports-apparel">Sports Apparel</a></li>
+        </ul>
+      </div>
+
+      <!-- Brand (center left) -->
+      <div class="col-12 col-md-3 order-md-2 d-flex flex-column align-items-start">
+        <div class="brand-wrap d-flex align-items-center gap-3">
+          <div class="brand-logo" aria-hidden="true">
+            <span class="brand-dot"></span>
+          </div>
+          <div>
+            <h3 class="brand-name">Jaz Sports</h3>
+            <p class="brand-tag">
+              Jaz Sports — Quality sports goods &amp; custom sublimated team kits, poles & posts manufacturer in Karachi, Pakistan.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Get in touch (center right / bottom on mobile) -->
+      <div class="col-12 col-md-3 order-md-3 text-center">
+        <h5 class="footer-heading pulse-heading">Get in touch</h5>
+        <div class="socials-row d-flex gap-2 align-items-center justify-content-center">
+          <a class="social" [href]="getWhatsAppHref()" target="_blank" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a class="social" [href]="instagramUrl" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a class="social" [href]="facebookUrl" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a class="social" [href]="tiktokUrl" target="_blank" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact (far right) -->
+      <div class="col-12 col-md-3 order-md-4">
+        <h5 class="footer-heading pulse-heading">Contact</h5>
+        <p class="mb-1">📞 WhatsApp: <a [href]="getWhatsAppHref()" target="_blank" rel="noopener">03199220813</a></p>
+        <p class="mb-1">📍 Location: 123 Main St, Karachi (edit later)</p>
+        <p class="mb-0">✉️ support&#64;sportsworld.com</p>
+      </div>
+
+    </div>
+  </div>
+</footer>

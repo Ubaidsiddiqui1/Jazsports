@@ -1,0 +1,39 @@
+<section class="cart-section container my-5">
+  <h2 class="text-center mb-4">Featured Products</h2>
+
+  <div class="row g-4">
+    <div 
+      class="col-md-3 col-sm-6" 
+      *ngFor="let product of products; let i = index"
+    >
+      <div 
+        class="card h-100 shadow-sm"
+        [ngClass]="{ 'special-card': i >= products.length - 4 }"
+      >
+        <img [src]="product.image" class="card-img-top" [alt]="product.name">
+
+        <!-- Normal products -->
+        <div class="card-body" *ngIf="i < products.length - 4">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="price fw-bold">{{ product.price }}</p>
+
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-primary btn-sm">Add to Cart</button>
+            <a [href]="getWhatsAppLink(product)" target="_blank" class="btn btn-success btn-sm">
+              <i class="bi bi-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Special last 4 products -->
+        <div class="special-overlay d-flex justify-content-center align-items-center" *ngIf="i >= products.length - 4">
+          <a [href]="getWhatsAppLink(product)" target="_blank" class="btn btn-whatsapp">
+            <i class="bi bi-whatsapp"></i> Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  

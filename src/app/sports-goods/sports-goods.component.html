@@ -1,0 +1,35 @@
+<section class="sports-goods">
+  <div class="container">
+    <h2 class="section-title">Our Sports Goods</h2>
+    <p class="section-subtitle">
+      High-quality equipment crafted for professionals and enthusiasts.
+    </p>
+
+    <div class="goods-grid">
+      <div class="goods-card" *ngFor="let item of goods">
+        <img [src]="item.image" [alt]="item.name" class="goods-img" />
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <button class="btn">Explore</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sports-goods">
+  <div class="container">
+    <h2 class="section-title">🏏 Cricket Equipment</h2>
+    <p class="section-subtitle">
+      Professional cricket gear designed for every player’s needs.
+    </p>
+
+    <div class="goods-grid">
+      <div class="goods-card" *ngFor="let item of cricketEquipment">
+        <img [src]="item.image" [alt]="item.name" class="goods-img" />
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <button class="btn">Explore</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,77 @@
+.sports-goods {
+  padding: 60px 20px;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.goods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.goods-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goods-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.goods-img {
+  width: 100%;
+  height: auto; /* Adjust height to fit image naturally */
+  max-height: 220px;
+  object-fit: contain; /* Ensure the whole product image is visible */
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.goods-card h3 {
+  font-size: 1.25rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.goods-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.btn {
+  background: #550000;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: center;
+}
+
+.btn:hover {
+  background: #770000;
+}
