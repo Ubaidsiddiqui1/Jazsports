@@ -8,9 +8,11 @@
     <div class="goods-grid">
       <div class="goods-card" *ngFor="let item of goods">
         <img [src]="item.image" [alt]="item.name" class="goods-img" />
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.description }}</p>
-        <button class="btn">Explore</button>
+        <div class="card-content">
+          <h3>{{ item.name }}</h3>
+          <!-- <p>{{ item.description }}</p> -->
+          <button class="btn">Explore</button>
+        </div>
       </div>
     </div>
   </div>
@@ -26,9 +28,11 @@
     <div class="goods-grid">
       <div class="goods-card" *ngFor="let item of cricketEquipment">
         <img [src]="item.image" [alt]="item.name" class="goods-img" />
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.description }}</p>
-        <button class="btn">Explore</button>
+        <div class="card-content">
+          <h3>{{ item.name }}</h3>
+          <!-- <p>{{ item.description }}</p> -->
+          <button class="btn">Explore</button>
+        </div>
       </div>
     </div>
   </div>
