@@ -4,7 +4,7 @@
     <!-- Logo Section -->
     <a routerLink="/" class="logo" (click)="closeMenu()">
       <img src="assets/home images/jaz-logo.jpg" alt="JazSports Logo" class="logo-img">
-      Jaz Spor
+      Jaz Sports
     </a>
     
     <!-- Toggle button for mobile -->
@@ -38,34 +38,35 @@
       </li>
       
       <!-- Sports Apparel -->
-      <li class="dropdown" [class.open]="activeDropdown === 'apparel'">
-        <a (click)="toggleDropdown('apparel')">Sports Apparel</a>
-        <ul class="dropdown-menu">
-          <li><a routerLink="/sports-apparel/customised-sublimated-kits" (click)="closeMenu()">Customised Sublimated Kits</a></li>
-          <li><a routerLink="/sports-apparel/school-uniform" (click)="closeMenu()">School Sports Uniform</a></li>
-          <li><a routerLink="/sports-apparel/track-suits" (click)="closeMenu()">Track Suits</a></li>
-          <li><a routerLink="/sports-apparel/hoodies" (click)="closeMenu()">Hoodies</a></li>
-          <li><a routerLink="/sports-apparel/trouser" (click)="closeMenu()">Trouser</a></li>
-          <li><a routerLink="/sports-apparel/shorts" (click)="closeMenu()">Shorts</a></li>
-          <li><a routerLink="/sports-apparel/basic" (click)="closeMenu()">Basic</a></li>
-          <li><a routerLink="/sports-apparel/bibs" (click)="closeMenu()">Bibs</a></li>
-          <li><a routerLink="/sports-apparel/baseball" (click)="closeMenu()">Baseball Wears</a></li>
-          <li><a routerLink="/sports-apparel/cricket-kits" (click)="closeMenu()">Cricket Kits</a></li>
-          <li><a routerLink="/sports-apparel/fashion-wear" (click)="closeMenu()">Fashion Wear</a></li>
-        </ul>
-      </li>
+     <li class="dropdown" [class.open]="activeDropdown === 'apparel'">
+  <a routerLink="/sports-apparel" (click)="closeMenu()">Sports Apparel</a>
+  <div class="dropdown-menu">
+   <li><a routerLink="sports-apparel/customised-sublimated-kits" (click)="closeMenu()">Customised Sublimated Kits</a> 
+    <li><a routerLink="sports-apparel/school-sports-uniform" (click)="closeMenu()">School Sports Uniform</a> 
+    <a routerLink="sports-apparel/track-suits" (click)="closeMenu()">Track Suits</a> 
+    <a routerLink="sports-apparel/hoodies" (click)="closeMenu()">Hoodies</a> 
+    <a routerLink="sports-apparel/trouser" (click)="closeMenu()">Trouser</a> 
+    <a routerLink="sports-apparel/short" (click)="closeMenu()">Short</a> 
+    <a routerLink="sports-apparel/basic" (click)="closeMenu()">Basic</a> 
+    <a routerLink="sports-apparel/bibs" (click)="closeMenu()">Bibs</a> 
+    <a routerLink="sports-apparel/baseball-wears" (click)="closeMenu()">Baseball Wears</a> 
+    <a routerLink="sports-apparel/cricket-kits" (click)="closeMenu()">Cricket Kits</a> 
+    <a routerLink="sports-apparel/fashion-wear" (click)="closeMenu()">Fashion Wear</a>
+  </div>
+</li>
+
 
       <!-- Medals / Trophies -->
-      <li><a routerLink="/medals" (click)="closeMenu()">Medals & Trophies</a></li>
+      <li><a routerLink="/medals-trophies" (click)="closeMenu()">Medals & Trophies</a></li>
       
       <!-- Goal Post -->
       <li class="dropdown" [class.open]="activeDropdown === 'goal'">
-        <a (click)="toggleDropdown('goal')">Goal Posts</a>
+         <a routerLink="/goal-posts-poles" (click)="closeMenu()">Goal Posts</a>
         <ul class="dropdown-menu">
-          <li><a routerLink="/goal/basketball" (click)="closeMenu()">Basketball Poles/Posts</a></li>
-          <li><a routerLink="/goal/football" (click)="closeMenu()">Football Poles/Posts</a></li>
-          <li><a routerLink="/goal/trolleys" (click)="closeMenu()">Trolleys</a></li>
-          <li><a routerLink="/goal/badminton" (click)="closeMenu()">Badminton Poles/Posts</a></li>
+          <li><a routerLink="goal-posts-poles/basketball-pole" (click)="closeMenu()">Basketball Poles/Posts</a></li>
+          <li><a routerLink="/goal-posts-poles/football-pole" (click)="closeMenu()">Football Poles/Posts</a></li>
+          <li><a routerLink="/goal-posts-poles/trolleys" (click)="closeMenu()">Trolleys</a></li>
+          <li><a routerLink="/goal-posts-poles/badminton-pole" (click)="closeMenu()">Badminton Poles/Posts</a></li>
         </ul>
       </li>
 

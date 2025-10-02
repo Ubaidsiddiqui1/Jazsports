@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,9 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { SportsGoodsComponent } from './sports-goods/sports-goods.component';
-import { SportsApparelComponent } from './components/sports-apparel/sports-apparel.component';
-import { MedalsTrophiesComponent } from './components/medals-trophies/medals-trophies.component';
-import { GoalPostsPolesComponent } from './components/goal-posts-poles/goal-posts-poles.component';
+import { SportsApparelComponent } from './sports-apparel/sports-apparel.component';
+import { MedalsTrophiesComponent } from './medals-trophies/medals-trophies.component';
+import { GoalPostsPolesComponent } from './goal-posts-poles/goal-posts-poles.component';
 import { CricketComponent } from './sports-goods/cricket/cricket.component';
 import { FootballComponent } from './sports-goods/football/football.component';
 import { BadmintonComponent } from './sports-goods/badminton/badminton.component';
@@ -44,7 +45,7 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,  // <-- added
+    NavbarComponent,
     HomeComponent,
     AboutComponent,
     ShopComponent,
@@ -83,7 +84,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule   // ✅ add this
   ],
   providers: [],
   bootstrap: [AppComponent]
