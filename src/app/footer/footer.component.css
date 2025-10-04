@@ -1,5 +1,5 @@
 :root{
-  --footer-bg: #000000;      /* pure black */
+  --footer-bg: white;      /* pure black */
   --ring-color: #550000;     /* maroon ring color */
   --ring-max-opacity: 0.75;
 }
@@ -7,7 +7,7 @@
 .footer {
   position: relative;
   overflow: hidden;
-  background: #000; /* solid black footer */
+  background: white; /* solid black footer */
   padding: 48px 0 32px;
   font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: white;
@@ -35,7 +35,7 @@
 .footer h3, 
 .footer h5, 
 .footer li {
-  color: #fff !important;
+  color: #FE7743 !important;
   text-decoration: none !important; /* removes underline */
 }
 
@@ -150,7 +150,7 @@
   height: 48px;
   border-radius: 50%;
   background: rgba(255,255,255,0.05);
-  color: #fff;
+  color: orange;
   font-size: 20px; /* makes icons bigger */
   transition: transform .25s ease, box-shadow .25s ease, color .25s ease;
 }
