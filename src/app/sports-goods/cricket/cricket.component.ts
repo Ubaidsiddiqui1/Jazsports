@@ -7,16 +7,20 @@ import { Component } from '@angular/core';
 })
 export class CricketComponent {
   products = [
-    { defaultImage: 'assets/images/product1a.jpg', hoverImage: 'assets/images/product1b.jpg' },
-    { defaultImage: 'assets/images/product2a.jpg', hoverImage: 'assets/images/product2b.jpg' },
-    { defaultImage: 'assets/images/product3a.jpg', hoverImage: 'assets/images/product3b.jpg' },
-    { defaultImage: 'assets/images/product4a.jpg', hoverImage: 'assets/images/product4b.jpg' },
-    { defaultImage: 'assets/images/product5a.jpg', hoverImage: 'assets/images/product5b.jpg' },
-    { defaultImage: 'assets/images/product6a.jpg', hoverImage: 'assets/images/product6b.jpg' },
-    { defaultImage: 'assets/images/product7a.jpg', hoverImage: 'assets/images/product7b.jpg' },
-    { defaultImage: 'assets/images/product8a.jpg', hoverImage: 'assets/images/product8b.jpg' },
-    { defaultImage: 'assets/images/product9a.jpg', hoverImage: 'assets/images/product9b.jpg' },
-    { defaultImage: 'assets/images/product10a.jpg', hoverImage: 'assets/images/product10b.jpg' }
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
   ];
 
   // Swap image on hover
