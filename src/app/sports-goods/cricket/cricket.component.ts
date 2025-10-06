@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CartService } from '../../services/cart.service';
+ // ✅ Import the service
 
 @Component({
   selector: 'app-cricket',
@@ -6,44 +8,89 @@ import { Component } from '@angular/core';
   styleUrls: ['./cricket.component.css']
 })
 export class CricketComponent {
+  constructor(private cartService: CartService) {}
+
   products = [
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
-    { defaultImage: 'assets/sportgoodscategory/cricket tennis bat.jpg', hoverImage: 'assets/sportgoodscategory/cricket hardball.jpg' },
+    {
+      id: 1,
+      name: 'Gemini Tennis Bat',
+      price: 2499,
+      defaultImage: 'assets/sportgoodscategory/cricket/bats/ca bat.png',
+      hoverImage: 'assets/sportgoodscategory/cricket/bats/ca back.png'
+    },
+    {
+      id: 2,
+      name: 'Cricket Hardball Bat',
+      price: 4999,
+      defaultImage: 'assets/sportgoodscategory/cricket/bats/ca bat.png',
+      hoverImage: 'assets/sportgoodscategory/cricket/bats/ca back.png'
+    },
+    {
+      id: 3,
+      name: 'Leather Cricket Ball',
+      price: 1299,
+      defaultImage: 'assets/sportgoodscategory/cricket ball.jpg',
+      hoverImage: 'assets/sportgoodscategory/cricket ball hover.jpg'
+    },
+    {
+      id: 4,
+      name: 'Cricket Helmet',
+      price: 3499,
+      defaultImage: 'assets/sportgoodscategory/cricket helmet.jpg',
+      hoverImage: 'assets/sportgoodscategory/cricket helmet hover.jpg'
+    },
+    {
+      id: 5,
+      name: 'Batting Gloves',
+      price: 1999,
+      defaultImage: 'assets/sportgoodscategory/batting gloves.jpg',
+      hoverImage: 'assets/sportgoodscategory/batting gloves hover.jpg'
+    },
+    {
+      id: 6,
+      name: 'Cricket Pads',
+      price: 2799,
+      defaultImage: 'assets/sportgoodscategory/cricket pads.jpg',
+      hoverImage: 'assets/sportgoodscategory/cricket pads hover.jpg'
+    }
   ];
 
-  // Swap image on hover
+  // Smooth hover transition
   swapImage(event: Event, hoverImage: string) {
-    (event.target as HTMLImageElement).src = hoverImage;
-  }
-
-  // Reset to default image
-  resetImage(event: Event, defaultImage: string) {
+    const img = event.target as HTMLImageElement;
+    img.style.transition = 'opacity 0.6s ease-in-out';
+    img.style.opacity = '0';
     setTimeout(() => {
-      (event.target as HTMLImageElement).src = defaultImage;
-    }, 2000);
+      img.src = hoverImage;
+      img.style.opacity = '1';
+    }, 200);
   }
 
-  // Toggle on click (manual swap)
+  resetImage(event: Event, defaultImage: string) {
+    const img = event.target as HTMLImageElement;
+    img.style.transition = 'opacity 0.6s ease-in-out';
+    img.style.opacity = '0';
+    setTimeout(() => {
+      img.src = defaultImage;
+      img.style.opacity = '1';
+    }, 200);
+  }
+
   toggleImage(event: Event, item: any) {
     const img = event.target as HTMLImageElement;
-    img.src = (img.src.includes(item.defaultImage)) ? item.hoverImage : item.defaultImage;
+    img.src = img.src.includes(item.defaultImage)
+      ? item.hoverImage
+      : item.defaultImage;
   }
 
-  // Handle top card clicks
   onCardClick(cardNumber: number) {
     console.log('Clicked card:', cardNumber);
-    // navigate to page or do something
+  }
+
+  // ✅ Add product to cart using CartService
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+    console.log(`🛒 Added to cart: ${product.name} (ID: ${product.id})`);
+    console.log('Current cart:', this.cartService.getCartItems());
   }
 }

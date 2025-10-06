@@ -41,6 +41,8 @@ import { BadmintonPoleComponent } from './goal-posts-poles/badminton-pole/badmin
 import { CarouselComponent } from './carousel/carousel.component';
 import { CartSectionComponent } from './cart-section/cart-section.component';
 import { FooterComponent } from './footer/footer.component';
+import { CartComponent } from './components/cart/cart.component';
+import { WhatsappComponent } from './whatsapp/whatsapp.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +82,9 @@ import { FooterComponent } from './footer/footer.component';
     BadmintonPoleComponent,
     CarouselComponent,
     CartSectionComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent,
+    WhatsappComponent
   ],
   imports: [
     BrowserModule,

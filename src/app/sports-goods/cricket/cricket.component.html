@@ -1,33 +1,24 @@
+<app-cart></app-cart>
 <div class="cricket-page">
-
-  <!-- Top Two Cards -->
-  <div class="top-cards">
-    <div class="card clickable-card" (click)="onCardClick(1)">
-      <img src="assets/images/top1a.jpg" 
-           (mouseenter)="swapImage($event, 'assets/images/top1b.jpg')" 
-           (mouseleave)="resetImage($event, 'assets/images/top1a.jpg')"
-           alt="Top 1" />
-    </div>
-    <div class="card clickable-card" (click)="onCardClick(2)">
-      <img src="assets/sportgoodscategory/gemini tennis bat.png" 
-           (mouseenter)="swapImage($event, 'assets/sportgoodscategory/gemini tennis bat.png')" 
-           (mouseleave)="resetImage($event, 'assets/sportgoodscategory/gemini tennis bat.png')"
-           alt="Top 2" />
-    </div>
-  </div>
-
-  <!-- Product Cards -->
+  <!-- Product Gallery -->
   <div class="product-cards">
-    <div class="card product-card" *ngFor="let item of products; let i=index">
-      <img [src]="item.defaultImage"
-           (mouseenter)="swapImage($event, item.hoverImage)"
-           (mouseleave)="resetImage($event, item.defaultImage)"
-           (click)="toggleImage($event, item)"
-           alt="Product Image {{i+1}}" />
+    <div class="product-card" *ngFor="let item of products">
+      <div class="image-wrapper">
+        <img
+          [src]="item.defaultImage"
+          (mouseenter)="swapImage($event, item.hoverImage)"
+          (mouseleave)="resetImage($event, item.defaultImage)"
+          alt="{{ item.name }}"
+        />
+      </div>
       <div class="card-body">
-        <h3>Product {{i+1}}</h3>
+        <h3 class="product-name">{{ item.name }}</h3>
+        <p class="product-price">Rs {{ item.price | number }}</p>
+        <button class="cart-btn" (click)="addToCart(item)">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
       </div>
     </div>
   </div>
-
 </div>
+

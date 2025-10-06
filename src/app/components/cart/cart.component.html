@@ -1,0 +1,43 @@
+<!-- === CART TAB (shows only when cart is closed) === -->
+<div class="cart-tab" *ngIf="!isOpen" (click)="toggleCart()">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span *ngIf="cartService.getCartItems().length">
+    {{ cartService.getCartItems().length }}
+  </span>
+</div>
+
+<!-- === OVERLAY (outside click closes) === -->
+<div class="cart-overlay" *ngIf="isOpen" (click)="closeCart($event)">
+  <div class="cart-panel open" (click)="$event.stopPropagation()">
+    <div class="cart-header">
+      <h3>Cart</h3>
+    </div>
+
+    <div class="cart-body" *ngIf="cartService.getCartItems().length; else emptyCart">
+      <div class="cart-item" *ngFor="let item of cartService.getCartItems()">
+        <button class="remove-x" (click)="removeItem(item.id)">×</button>
+        <img [src]="item.defaultImage" alt="{{ item.name }}">
+        <div class="item-info">
+          <h4>{{ item.name }}</h4>
+          <p>Rs {{ item.price | number }}</p>
+          <div class="qty-controls">
+            <button (click)="decreaseQty(item)">−</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="increaseQty(item)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-total text-left">
+        <h4>Total: Rs {{ totalPrice | number }}</h4>
+      </div>
+
+      <button class="clear-btn" (click)="orderOnWhatsapp()" style="letter-spacing: 6px;">Order on WhatsApp</button>
+
+    </div>
+
+    <ng-template #emptyCart>
+      <p class="empty-msg">Your cart is empty</p>
+    </ng-template>
+  </div>
+</div>

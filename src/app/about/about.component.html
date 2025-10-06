@@ -1,10 +1,42 @@
-<p>about works!</p>
-<p>about works!</p>
-<p>about works!</p>
-<p>about works!</p>
-<p>about works!</p>
-<p>about works!</p>
-<p>about works!</p>
-<p>about works!</p>
-<p>about works!</p>
-<p>about works!</p>
+<div class="about-container">
+  <h2>Company Background</h2>
+
+  <div class="about-box">
+    <p>
+      <span>Founded in 2004 in Karachi, Pakistan, our company began with sports goods and gradually expanded into sports apparel, medals, trophies, and metal sports equipment such as poles and posts.</span>
+      <span>Established to fill the gap for a one-roof sports solution, we take pride in providing every kind of sports-related product with complete convenience and reliability.</span>
+      <span>Today, we stand as one of the most trustworthy and committed companies in Pakistan, dedicated to producing A-grade quality products that meet global standards.</span>
+    </p>
+  </div>
+
+  <div class="sourcing-section">
+    <div class="about-box sourcing-text" #textBox>
+      <h2>Sports Goods Sourcing & Specialization</h2>
+      <p>
+        <span>We are connected with trusted sports goods manufacturers across Pakistan and abroad, each specialized in their own product category.</span>
+        <span>To ensure top quality, we work with separate providers for every single item, allowing us to source the best sports goods from all over Pakistan and even China.</span>
+        <span>Our strong supplier network enables us to maintain consistent quality, reliable supply, and competitive pricing, ensuring our customers always receive the best value.</span>
+      </p>
+    </div>
+
+    <!-- ✅ Carousel -->
+    <div class="carousel-container" [style.height.px]="textBox?.offsetHeight">
+      <div class="carousel">
+        <div
+          class="carousel-images"
+          #carouselImages
+          [style.transform]="totalImages > 0 ? 'translateX(-' + currentIndex * 100 + '%)' : 'none'"
+        >
+          <img src="assets/sportgoodscategory/cricket/bats/ca bat.png" alt="Sports Image 1" />
+          <img src="assets/sportgoodscategory/batting pad.jpg" alt="Sports Image 2" />
+          <img src="assets/sportgoodscategory/abdominal guard.jpg" alt="Sports Image 3" />
+          <img src="assets/sportgoodscategory/cricket tennis bat.jpg" alt="Sports Image 4" />
+          <img src="assets/sportgoodscategory/football/front/football1.png" alt="Sports Image 5" />
+        </div>
+
+        <button class="prev-btn" (click)="prevSlide()">&#10094;</button>
+        <button class="next-btn" (click)="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+  </div>
+</div>
