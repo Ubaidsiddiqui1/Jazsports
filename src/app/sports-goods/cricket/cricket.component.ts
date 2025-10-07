@@ -1,64 +1,69 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
- // ✅ Import the service
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-cricket',
   templateUrl: './cricket.component.html',
   styleUrls: ['./cricket.component.css']
 })
-export class CricketComponent {
-  constructor(private cartService: CartService) {}
-
+export class CricketComponent implements OnInit {
   products = [
     {
       id: 1,
+      category: 'cricket',
       name: 'Gemini Tennis Bat',
       price: 2499,
+      color: 'Natural Wood',
+      size: 'Full Size',
+      brand: 'CA',
+      description:
+        'Lightweight tennis bat made from high-quality Kashmir willow for practice and casual play.',
       defaultImage: 'assets/sportgoodscategory/cricket/bats/ca bat.png',
-      hoverImage: 'assets/sportgoodscategory/cricket/bats/ca back.png'
+      hoverImage: 'assets/sportgoodscategory/cricket/bats/ca back.png',
+      images: [
+        'assets/sportgoodscategory/cricket/bats/ca bat.png',
+        'assets/sportgoodscategory/cricket/bats/ca back.png',
+        'assets/sportgoodscategory/cricket/bats/ca back.png'
+      ]
     },
     {
       id: 2,
+      category: 'cricket',
       name: 'Cricket Hardball Bat',
       price: 4999,
+      color: 'Natural Finish',
+      size: 'Full Size',
+      brand: 'CA',
+      description:
+        'Professional-grade hardball bat with superior balance and power.',
       defaultImage: 'assets/sportgoodscategory/cricket/bats/ca bat.png',
-      hoverImage: 'assets/sportgoodscategory/cricket/bats/ca back.png'
+      hoverImage: 'assets/sportgoodscategory/cricket/bats/ca back.png',
+      images: [
+        'assets/sportgoodscategory/cricket/bats/ca bat.png',
+        'assets/sportgoodscategory/cricket/bats/ca back.png',
+        'assets/sportgoodscategory/cricket/bats/ca side.png'
+      ]
     },
-    {
-      id: 3,
-      name: 'Leather Cricket Ball',
-      price: 1299,
-      defaultImage: 'assets/sportgoodscategory/cricket ball.jpg',
-      hoverImage: 'assets/sportgoodscategory/cricket ball hover.jpg'
-    },
-    {
-      id: 4,
-      name: 'Cricket Helmet',
-      price: 3499,
-      defaultImage: 'assets/sportgoodscategory/cricket helmet.jpg',
-      hoverImage: 'assets/sportgoodscategory/cricket helmet hover.jpg'
-    },
-    {
-      id: 5,
-      name: 'Batting Gloves',
-      price: 1999,
-      defaultImage: 'assets/sportgoodscategory/batting gloves.jpg',
-      hoverImage: 'assets/sportgoodscategory/batting gloves hover.jpg'
-    },
-    {
-      id: 6,
-      name: 'Cricket Pads',
-      price: 2799,
-      defaultImage: 'assets/sportgoodscategory/cricket pads.jpg',
-      hoverImage: 'assets/sportgoodscategory/cricket pads hover.jpg'
-    }
+    // Add more products below if needed
   ];
 
-  // Smooth hover transition
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+    private productService: ProductService
+  ) {}
+
+  ngOnInit() {
+    // Register cricket products in shared ProductService
+    this.productService.addProducts(this.products);
+  }
+
+  // ====== Hover Effects ======
   swapImage(event: Event, hoverImage: string) {
     const img = event.target as HTMLImageElement;
-    img.style.transition = 'opacity 0.6s ease-in-out';
+    img.style.transition = 'opacity 0.3s ease-in-out';
     img.style.opacity = '0';
     setTimeout(() => {
       img.src = hoverImage;
@@ -68,7 +73,7 @@ export class CricketComponent {
 
   resetImage(event: Event, defaultImage: string) {
     const img = event.target as HTMLImageElement;
-    img.style.transition = 'opacity 0.6s ease-in-out';
+    img.style.transition = 'opacity 0.3s ease-in-out';
     img.style.opacity = '0';
     setTimeout(() => {
       img.src = defaultImage;
@@ -76,21 +81,13 @@ export class CricketComponent {
     }, 200);
   }
 
-  toggleImage(event: Event, item: any) {
-    const img = event.target as HTMLImageElement;
-    img.src = img.src.includes(item.defaultImage)
-      ? item.hoverImage
-      : item.defaultImage;
-  }
-
-  onCardClick(cardNumber: number) {
-    console.log('Clicked card:', cardNumber);
-  }
-
-  // ✅ Add product to cart using CartService
+  // ====== Cart & Navigation ======
   addToCart(product: any) {
     this.cartService.addToCart(product);
-    console.log(`🛒 Added to cart: ${product.name} (ID: ${product.id})`);
-    console.log('Current cart:', this.cartService.getCartItems());
+    console.log(`🛒 Added to cart: ${product.name}`);
+  }
+
+  viewProduct(item: any) {
+    this.router.navigate([`/sports-goods/${item.category}`, item.id]);
   }
 }

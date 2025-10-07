@@ -43,6 +43,8 @@ import { CartSectionComponent } from './cart-section/cart-section.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WhatsappComponent } from './whatsapp/whatsapp.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +86,9 @@ import { WhatsappComponent } from './whatsapp/whatsapp.component';
     CartSectionComponent,
     FooterComponent,
     CartComponent,
-    WhatsappComponent
+    WhatsappComponent,
+    ProductDetailComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

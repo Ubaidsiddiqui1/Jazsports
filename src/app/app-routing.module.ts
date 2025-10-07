@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { MedalsTrophiesComponent } from './medals-trophies/medals-trophies.component';
 import { GoalPostsPolesComponent } from './goal-posts-poles/goal-posts-poles.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 // Sports Goods
 import { SportsGoodsComponent } from './sports-goods/sports-goods.component';
@@ -50,7 +51,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'medals-trophies', component: MedalsTrophiesComponent },
 
-  // Sports Goods as independent routes
+  // Sports Goods
   { path: 'sports-goods', component: SportsGoodsComponent },
   { path: 'sports-goods/cricket', component: CricketComponent },
   { path: 'sports-goods/football', component: FootballComponent },
@@ -63,7 +64,19 @@ const routes: Routes = [
   { path: 'sports-goods/volleyball', component: VolleyballComponent },
   { path: 'sports-goods/swimming', component: SwimmingComponent },
 
-  // Sports Apparel as independent routes
+  // Individual product detail pages (for each sport)
+  { path: 'sports-goods/cricket/:id', component: ProductDetailComponent },
+  { path: 'sports-goods/football/:id', component: ProductDetailComponent },
+  { path: 'sports-goods/badminton/:id', component: ProductDetailComponent },
+  { path: 'sports-goods/basketball/:id', component: ProductDetailComponent },
+  { path: 'sports-goods/tennis/:id', component: ProductDetailComponent },
+  { path: 'sports-goods/table-tennis/:id', component: ProductDetailComponent },
+  { path: 'sports-goods/hockey/:id', component: ProductDetailComponent },
+  { path: 'sports-goods/squash/:id', component: ProductDetailComponent },
+  { path: 'sports-goods/volleyball/:id', component: ProductDetailComponent },
+  { path: 'sports-goods/swimming/:id', component: ProductDetailComponent },
+
+  // Sports Apparel
   { path: 'sports-apparel', component: SportsApparelComponent },
   { path: 'sports-apparel/customised-sublimated-kits', component: CustomisedSublimatedKitsComponent },
   { path: 'sports-apparel/school-sports-uniform', component: SchoolSportsUniformComponent },
@@ -77,14 +90,20 @@ const routes: Routes = [
   { path: 'sports-apparel/cricket-kits', component: CricketKitsComponent },
   { path: 'sports-apparel/fashion-wear', component: FashionWearComponent },
 
-  // Goal Posts & Poles as independent routes
+  // Apparel product detail pages (optional)
+  { path: 'sports-apparel/:category/:id', component: ProductDetailComponent },
+
+  // Goal Posts & Poles
   { path: 'goal-posts-poles', component: GoalPostsPolesComponent },
   { path: 'goal-posts-poles/basketball-pole', component: BasketballPoleComponent },
   { path: 'goal-posts-poles/football-pole', component: FootballPoleComponent },
   { path: 'goal-posts-poles/trolleys', component: TrolleysComponent },
   { path: 'goal-posts-poles/badminton-pole', component: BadmintonPoleComponent },
 
-  // Wildcard (unknown routes → home)
+  // Product detail for goal-posts too
+  { path: 'goal-posts-poles/:category/:id', component: ProductDetailComponent },
+
+  // Wildcard
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

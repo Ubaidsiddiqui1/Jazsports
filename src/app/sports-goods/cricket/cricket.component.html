@@ -1,8 +1,15 @@
 <app-cart></app-cart>
+<app-breadcrumb></app-breadcrumb>
+
+
+
 <div class="cricket-page">
-  <!-- Product Gallery -->
   <div class="product-cards">
-    <div class="product-card" *ngFor="let item of products">
+    <div
+      class="product-card"
+      *ngFor="let item of products"
+      (click)="viewProduct(item)"
+    >
       <div class="image-wrapper">
         <img
           [src]="item.defaultImage"
@@ -11,14 +18,18 @@
           alt="{{ item.name }}"
         />
       </div>
+
       <div class="card-body">
         <h3 class="product-name">{{ item.name }}</h3>
         <p class="product-price">Rs {{ item.price | number }}</p>
-        <button class="cart-btn" (click)="addToCart(item)">
+
+        <button
+          class="cart-btn"
+          (click)="addToCart(item); $event.stopPropagation()"
+        >
           <i class="fa-solid fa-cart-shopping"></i>
         </button>
       </div>
     </div>
   </div>
 </div>
-

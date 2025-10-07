@@ -1,0 +1,44 @@
+<app-cart></app-cart>
+<app-breadcrumb></app-breadcrumb>
+
+<div class="product-detail" *ngIf="product">
+  <div class="image-section">
+    <!-- Thumbnail images -->
+    <div class="thumbnail-gallery">
+      <img
+        *ngFor="let img of product.images"
+        [src]="img"
+        (click)="selectImage(img)"
+        [class.active]="img === selectedImage"
+        alt="Product thumbnail"
+      />
+    </div>
+
+    <!-- Main Image -->
+    <img class="main-image" [src]="selectedImage" [alt]="product.name" />
+  </div>
+
+  <div class="details-section">
+    <h2>{{ product.name }}</h2>
+    <p class="desc">{{ product.description }}</p>
+
+    <div class="details">
+      <p><strong>Brand:</strong> {{ product.brand }}</p>
+      <p><strong>Color:</strong> {{ product.color }}</p>
+      <p><strong>Size:</strong> {{ product.size }}</p>
+      <p>Rs: {{ product.price }}</p>
+    </div>
+
+    <!-- Quantity + Add to Cart -->
+    <div class="cart-controls">
+      <div class="quantity-selector">
+        <button (click)="decreaseQty()">-</button>
+        <span>{{ quantity }}</span>
+        <button (click)="increaseQty()">+</button>
+      </div>
+      <button class="add-to-cart" (click)="addToCart(product, quantity)">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

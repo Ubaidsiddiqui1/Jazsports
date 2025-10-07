@@ -1,0 +1,5 @@
+<nav class="breadcrumb">
+  <a routerLink="/sports-goods">Sports Goods</a>
+  <span *ngIf="currentCategory" class="arrow">›</span>
+  <span *ngIf="currentCategory" class="active">{{ currentCategory | titlecase }}</span>
+</nav>

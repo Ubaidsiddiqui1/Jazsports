@@ -8,18 +8,17 @@ export class CartService {
 
   constructor() {}
 
- addToCart(product: any) {
-  const existingItem = this.cartItems.find(item => item.id === product.id);
+  addToCart(product: any, qty: number = 1) {
+    const existingItem = this.cartItems.find(item => item.id === product.id);
 
-  if (existingItem) {
-    existingItem.quantity++;
-  } else {
-    this.cartItems.push({ ...product, quantity: 1 });
+    if (existingItem) {
+      existingItem.quantity += qty; // add quantity
+    } else {
+      this.cartItems.push({ ...product, quantity: qty });
+    }
+
+    console.log(`🛒 Added ${qty} x ${product.name} to cart`);
   }
-
-  console.log(`Added to cart: ${product.name}`);
-}
-
 
   getCartItems() {
     return this.cartItems;
