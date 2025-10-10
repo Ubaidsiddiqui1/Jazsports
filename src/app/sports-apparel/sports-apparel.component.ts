@@ -14,12 +14,12 @@ export class SportsApparelComponent {
   apparels: ApparelProduct[] = [
     { name: 'Football kits', image: 'assets/sports-apparel-main/football jersey.jpg' },
     { name: 'Sports Uniform', image: 'assets/sports-apparel-main/uniform logo.jpg' },
-    { name: 'Cricket kits', image: 'assets/sports-apparel-main/basketball-jersey.jpg' },
-    { name: 'Running Tracksuit', image: 'assets/sports-apparel-main/tracksuit.jpg' },
-    { name: 'Training Shorts', image: 'assets/sports-apparel-main/training-shorts.jpg' },
-    { name: 'Hoodie', image: 'assets/sports-apparel-main/hoodie.jpg' },
-    { name: 'Compression Shirt', image: 'assets/sports-apparel-main/compression-shirt.jpg' },
-    { name: 'Gym Tank Top', image: 'assets/sports-apparel-main/gym-tank.jpg' }
+    { name: 'Cricket kits', image: 'assets/sports-apparel-main/cricket jersey logo.jpg' },
+    { name: 'Running Tracksuit', image: 'assets/sports-apparel-main/track suit.jpg' },
+    { name: 'Training Shorts', image: 'assets/sports-apparel-main/baseball jersey.jpg' },
+    { name: 'Hoodie', image: 'assets/sports-apparel-main/Hoodie.jpg' },
+    { name: 'Compression Shirt', image: 'assets/sports-apparel-main/track suit.jpg' },
+    { name: 'Gym Tank Top', image: 'assets/sports-apparel-main/bibs.jpg' }
   ];
 
   getWhatsAppMessage(product: ApparelProduct): string {

@@ -45,6 +45,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { WhatsappComponent } from './whatsapp/whatsapp.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     CartComponent,
     WhatsappComponent,
     ProductDetailComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
