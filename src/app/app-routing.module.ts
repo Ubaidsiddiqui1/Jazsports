@@ -8,6 +8,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { MedalsTrophiesComponent } from './medals-trophies/medals-trophies.component';
 import { GoalPostsPolesComponent } from './goal-posts-poles/goal-posts-poles.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ContactComponent } from './contact/contact.component';
 
 // Sports Goods
 import { SportsGoodsComponent } from './sports-goods/sports-goods.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'shop', component: ShopComponent },
   { path: 'about', component: AboutComponent },
   { path: 'medals-trophies', component: MedalsTrophiesComponent },
+  { path: 'contact', component: ContactComponent },
 
   // Sports Goods
   { path: 'sports-goods', component: SportsGoodsComponent },

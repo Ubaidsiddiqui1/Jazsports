@@ -10,7 +10,7 @@
           <h5 class="product-name"><span>{{ product.name }}</span></h5>
 
           <div class="button-group mt-2">
-            <button class="btn btn-explore">Explore</button>
+            <button class="btn btn-explore" (click)="navigateToCategory(product)">Explore</button>
             <a [href]="getWhatsAppLink(product)" target="_blank" class="btn btn-whatsapp">
               <i class="bi bi-whatsapp"></i> WhatsApp
             </a>

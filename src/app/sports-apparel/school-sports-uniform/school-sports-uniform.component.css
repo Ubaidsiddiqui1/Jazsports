@@ -1,0 +1,122 @@
+.page {
+  padding: 50px 20px;
+  background-color: #ffffff;
+  color: #fff;
+   font-family: "Poppins", sans-serif;
+}
+
+/* ===== Top Two Cards ===== */
+.top-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.top-cards .card {
+  width: 400px;
+  height: 450px;
+  border: none;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.top-cards .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.top-cards .card:hover {
+  transform: scale(1.03);
+}
+
+.top-cards .card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Product Gallery ===== */
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-content: center;
+}
+
+.product-card {
+  background: transparent;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.product-card:hover .image-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  margin-top: 15px;
+}
+
+.product-name {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: #fe7743;
+}
+
+.product-price {
+  color: #fe7743;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cart-btn {
+
+  color: #fe7743;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+
+}
+.cart-btn:hover {
+  background-color: white;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .top-cards .card {
+    width: 90%;
+    height: 350px;
+  }
+
+  .image-wrapper {
+    height: 300px;
+  }
+
+  .product-name {
+    font-size: 1.1rem;
+  }
+}

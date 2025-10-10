@@ -8,17 +8,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BreadcrumbComponent implements OnInit {
   @Input() currentCategory: string | null = null;
+  parentSection: string | null = null;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    // If no input is provided, read from URL automatically
     if (!this.currentCategory) {
       const segments = this.router.url.split('/');
-      // Example URL: /sports-goods/cricket/1
-      const categoryIndex = segments.indexOf('sports-goods') + 1;
-      if (categoryIndex > 0 && segments[categoryIndex]) {
-        this.currentCategory = segments[categoryIndex];
+
+      // Check which main section the user is in
+      if (segments.includes('sports-goods')) {
+        this.parentSection = 'Sports Goods';
+        const categoryIndex = segments.indexOf('sports-goods') + 1;
+        if (categoryIndex > 0 && segments[categoryIndex]) {
+          this.currentCategory = segments[categoryIndex];
+        }
+      } else if (segments.includes('sports-apparel')) {
+        this.parentSection = 'Sports Apparel';
+        const categoryIndex = segments.indexOf('sports-apparel') + 1;
+        if (categoryIndex > 0 && segments[categoryIndex]) {
+          this.currentCategory = segments[categoryIndex];
+        }
       }
     }
   }
