@@ -1,2 +1,24 @@
-<p>sports-apparel works!</p>
+<section class="apparel-section container my-5">
+  <h2 class="text-center mb-4">Sports Apparel Categories</h2>
+
+  <div class="row g-4">
+    <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let product of apparels">
+      <div class="card special-card h-100 shadow-sm">
+        <img [src]="product.image" class="card-img-top" [alt]="product.name" />
+
+        <div class="overlay-content d-flex flex-column justify-content-center align-items-center text-center">
+          <h5 class="product-name"><span>{{ product.name }}</span></h5>
+
+          <div class="button-group mt-2">
+            <button class="btn btn-explore">Explore</button>
+            <a [href]="getWhatsAppLink(product)" target="_blank" class="btn btn-whatsapp">
+              <i class="bi bi-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <router-outlet></router-outlet>

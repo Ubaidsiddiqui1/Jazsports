@@ -1,2 +1,21 @@
-<p>goal-posts-poles works!</p>
-<router-outlet></router-outlet>
+<div class="cards-container">
+  <div
+    class="card"
+    *ngFor="let product of products; let i = index"
+    [class.shake]="product.showSecond"
+  >
+    <img
+      [src]="product.showSecond ? product.secondImage : product.image"
+      alt="Product Image"
+      [class.slide-down]="product.showSecond"
+    />
+    <div class="content">
+      <p class="description">{{ typedDescriptions[i] }}</p>
+      <div class="prices">
+        <span class="old-price">Rs {{ product.oldPrice }}</span>
+        <span class="new-price">Rs {{ product.newPrice }}</span>
+      </div>
+      <button class="order-btn" (click)="openWhatsApp(product)">Order</button>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gamewebsite": {
+    "jazsports": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/gamewebsite",
+            "outputPath": "dist/jazsports",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -36,15 +36,12 @@
             ],
             "styles": [
               "src/styles.css",
-                 "node_modules/bootstrap/dist/css/bootstrap.min.css",
-
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            
             "scripts": [
               "./node_modules/@popperjs/core/dist/umd/popper.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-
             ]
           },
           "configurations": {
@@ -75,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "gamewebsite:build:production"
+              "buildTarget": "jazsports:build:production"
             },
             "development": {
-              "buildTarget": "gamewebsite:build:development"
+              "buildTarget": "jazsports:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "gamewebsite:build"
+            "buildTarget": "jazsports:build"
           }
         },
         "test": {

@@ -1,1 +1,39 @@
-<p>medals-trophies works!</p>
+<section class="sports-goods">
+  <div class="container">
+    <h2 class="section-title">🏅 Medals Collection</h2>
+    <p class="section-subtitle">
+      Explore our premium-quality medals designed for events, competitions, and achievements.
+    </p>
+
+    <div class="goods-grid">
+      <div class="goods-card" *ngFor="let item of medals">
+        <img [src]="item.image" [alt]="item.name" class="goods-img" />
+        <div class="card-content">
+          <h3>{{ item.name }}</h3>
+          <button class="btn">Explore</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sports-goods">
+  <div class="container">
+    <h2 class="section-title">🏆 Trophies Collection</h2>
+    <p class="section-subtitle">
+      High-quality trophies designed for sports, corporate, and academic excellence.
+    </p>
+
+    <div class="goods-grid">
+      <div class="goods-card" *ngFor="let item of trophies">
+        <img [src]="item.image" [alt]="item.name" class="goods-img" />
+        <div class="card-content">
+          <h3>{{ item.name }}</h3>
+          <button class="btn">Explore</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<router-outlet></router-outlet>
